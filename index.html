@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>FRAME AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+  </head>
+  
+  <body
+    class="border-solid border-2 border-gray-800 focus-within:border-pink-600 hover:border-pink-600"
+  >
+    <div class="app-container">
+      <header class="rounded-t-lg">
+        <div class="text-center bg-pink-600 hover:bg-pink-700 rounded-t-lg relative">
+          <button id="options-button" type="button" class="w-full border-b border-pink-500">...</button>
+          <div id="dropdownMenu" class="absolute right-0 w-full max-w-full bg-gray-300 border border-gray-300 rounded shadow-xl p-2 hidden">
+            <div class="py-1">
+              <button id="load-chat-button" type="button" class="block text-sm w-full px-4 py-2 text-gray-800 hover:bg-gray-100">Load Chat</button>
+              <button id="exit-button" type="button" class="block text-sm w-full py-2 text-gray-800 hover:bg-gray-100">Exit</button>
+            </div>
+          </div>
+        <div>
+        <div class="title flex flex-row justify-between pl-3 bg-pink-600 ">
+          <h1 class="text-white">
+            frame-<span class="text-blue-500">AI</span>
+          </h1>
+          <button id="save-button" class="mr-5 text-pink-300 hover:text-white">
+            Save
+          </button>
+        </div>
+      </header>
+
+      <div class="chat-container">
+        <div id="chat-output"></div>
+        <form id="chat-form">
+          <input autofocus type="text" id="chat-input" />
+          <button type="submit" id="send">Send</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="/src/renderer.ts"></script>
+    <script type="module" src="/src/utils/chat.ts"></script>
+    <script type="module" src="/src/utils/option-menu.ts"></script>
+  </body>
+</html>
